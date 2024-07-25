@@ -2,7 +2,6 @@
 - name: Running show commands on Cisco IOS
   hosts: routers
   gather_facts: false
-  connection: network_cli
 
   tasks:
     - name: BGP config
@@ -13,7 +12,7 @@
           - show ip interface brief
           - bgp log-neighbor-changes
           - network 192.168.66.0
-          - neighbor "{{item}}" remote-as 65535
+          - neighbor "{{ item }}" remote-as 65535
         parent: router bgp 65535
         items:
           - 192.168.66.16
