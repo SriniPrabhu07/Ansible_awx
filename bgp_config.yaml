@@ -8,8 +8,6 @@
       ios_config: #ansible module
         save_when: modified
         lines: #commands to run
-          - show version
-          - show ip interface brief
           - bgp log-neighbor-changes
           - network 192.168.66.0
           - neighbor "{{ item }}" remote-as 65535
