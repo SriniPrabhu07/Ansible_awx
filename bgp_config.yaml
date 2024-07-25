@@ -13,8 +13,8 @@
           - neighbor "{{ item }}" remote-as 65535
         parents: router bgp 65535
       with_items:
-          - 192.168.66.16
           - 192.168.66.15
+          - 192.168.66.16
       
       register: output    #register the output in a variable named output
 
